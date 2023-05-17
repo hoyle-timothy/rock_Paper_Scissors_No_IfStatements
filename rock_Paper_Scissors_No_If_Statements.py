@@ -6,7 +6,7 @@ computerwins = 0 #this variable is used to track the number of rounds the comput
 
 def endFunc ():
     '''this function handles exiting the program when a player wants to quit the game'''
-    print("thanks for playing. Have a good day.")
+    print("\nthanks for playing. Have a good day.")
     sys.exit()
     
 def continueFunc ():
@@ -47,8 +47,8 @@ def playAgain ():
     '''this function handles asking the user if they would like to play another round. it also has input validation if the user enters something other than a 'y' or 'n'''
     again_choice = input('\nWould you like to play again? y/n ').lower()
     again_result = {'y': 0, 'n': 1}
-    again_idx = again_result.get(again_choice,3)
-    again_dict = {0:continueFunc,1:endFunc,3:invalidFunc2}
+    again_idx = again_result.get(again_choice,2)
+    again_dict = {0:continueFunc,1:endFunc,2:invalidFunc2}
     again_dict[again_idx]()
     
 while True:
