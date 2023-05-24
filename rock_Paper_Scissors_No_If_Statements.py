@@ -4,6 +4,7 @@ round = 0 #this variable is used to track the number of rounds played
 playerwins = 0 # this variable is used to track the number of rounds the player has won
 computerwins = 0 #this variable is used to track the number of rounds the computer has won
 
+
 def endFunc ():
     '''this function handles exiting the program when a player wants to quit the game'''
     print("\nthanks for playing. Have a good day.")
@@ -48,13 +49,13 @@ def playAgain ():
     again_choice = input('\nWould you like to play again? y/n ').lower()
     again_result = {'y': 0, 'n': 1}
     again_idx = again_result.get(again_choice,2)
-    again_dict = {0:continueFunc,1:endFunc,2:invalidFunc2}
-    again_dict[again_idx]()
+    again_tuple = continueFunc,endFunc,invalidFunc2
+    again_tuple[again_idx]()
     
 while True:
     round += 1 #tracks the number of rounds played
-    print(f"\nRound {round}; fight!")
-    choice = input('Make your choice, if you dare: ').lower() #takes the user input, and forces it all to be lowercase
+    print(f"ROCK--PAPER--SCISSORS\n\nRound {round}; fight!")
+    choice = input('Make your choice...if you dare: ').lower() #takes the user input, and forces it all to be lowercase
     print(f'\nYour choice was: {choice}')
 
     choice_dict = {'rock': 0, 'paper': 1,'scissors': 2} #assigns a numeric value to each possible valid choice
